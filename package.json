@@ -1,0 +1,36 @@
+{
+  "name": "abv-socket",
+  "version": "0.0.1",
+  "description": "Abvos base socket",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "dependencies": {
+    "abv-ts": "0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tondy67/abv-socket.git"
+  },
+  "keywords": [
+    "abv",
+    "abvos",
+    "socket",
+    "websocket"
+  ],
+  "author": {
+    "name": "Todor Angelov",
+    "email": "abv@tondy.org",
+    "url": "http://tondy.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tondy67/abv-socket/issues"
+  },
+  "homepage": "https://github.com/tondy67/abv-socket#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "ws": "^3.2.0"
+  }
+}
