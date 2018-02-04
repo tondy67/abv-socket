@@ -4,22 +4,16 @@
  */
 "use strict";
 
-const ts = require('abv-ts')('abv:socket');
-
-const pack = require('./lib/pack.js');
-
-const sock = require('./lib/socket.js');
-const CSocket = require('./lib/csocket.js');
-
-const socket = {
-	CSocket: 	CSocket,
-	Socket:		sock.Socket,
-	clients:	sock.clients,
-	rooms:		sock.rooms,
-	commands:	sock.commands,
-	pack: pack
-};
+const Pack = require('./lib/Pack.js');
+const Socket = require('./lib/Socket.js');
+const CSocket = require('./lib/CSocket.js');
+const SSocket = require('./lib/SSocket.js');
+const Conn = require('./lib/Conn.js');
 
 module.exports = {
-	socket:		socket
+	CSocket: CSocket,
+	SSocket: SSocket,
+	Socket:	Socket,
+	Pack: Pack,
+	Conn: Conn
 };

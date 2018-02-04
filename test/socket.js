@@ -5,7 +5,8 @@
 
 const log = console.log.bind(console);
 const assert = require('assert');
-const socket = require('../lib/socket.js');
+const Socket = require('../lib/Socket.js');
+const CSocket = require('../lib/CSocket.js');
 const WebSocket = require('ws');
 
 const port = 8888;
@@ -25,20 +26,28 @@ wss.on('connection', function (ws) {
 describe('Abvos Socket', function() {
 	describe('create new socket', function() {
 		it('returns socket', function() {
-	    	const sock = new socket.Socket(); 
+	    	const sock = new Socket(); 
+	    	assert(sock, 'No Socket?');
+	  	});
+	});
+});
+
+describe('Abvos Client Socket', function() {
+	describe('create new socket', function() {
+		it('returns socket', function() {
+	    	const sock = new CSocket('http://127.0.0.1:' + port,WebSocket); 
 	    	assert(sock, 'No Socket?');
 	  	});
 		it('returns false if fake host', function() {
-	    	const sock = new socket.Socket(); 
-	    	const r = sock.connect('bla');
-			assert.equal(r, false, 'return> false');
+	    	const sock = new CSocket(); 
+	    	const r = sock.connect('blah',WebSocket);
+	    	assert.equal(r,false, 'fake host');
 	  	});
 	});
 
 	describe('send message', function() {
 		it('greeting', function(done) {
-	    	const sock = new socket.Socket();
-	    	sock.connect('http://127.0.0.1:' + port,WebSocket);
+	    	const sock = new CSocket('http://127.0.0.1:' + port,WebSocket);
 	    	sock.on('msg',(msg) => { 
 //	    		log('> ' + msg.b);	
 	    		assert.equal(msg.b, greeting, 'msg: ' + greeting);
