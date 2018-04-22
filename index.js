@@ -1,6 +1,7 @@
 /**
  * Abvos sockets
  * @module abv-socket
+ * https://github.com/tondy67/abv-socket
  */
 "use strict";
 
