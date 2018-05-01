@@ -1,6 +1,6 @@
 {
   "name": "abv-socket",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Abvos sockets",
   "engines": {
     "node": ">=6.11.3"
@@ -10,9 +10,10 @@
     "test": "mocha test/*.js"
   },
   "dependencies": {
-    "abv-ts": "0.0.3",
+    "abv-pack": "0.0.1",
+    "abv-ts": "0.0.4",
     "abv-events": "0.0.2",
-    "abv-vfs": "0.0.3"
+    "abv-vfs": "0.0.4"
   },
   "repository": {
     "type": "git",
